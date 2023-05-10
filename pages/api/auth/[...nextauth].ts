@@ -29,9 +29,8 @@ export const authOptions: AuthOptions = {
           throw new Error("Invalid credentials");
         }
 
-        const user =await prisma.user.findUnique(
-            {
-                where:{ email:credentials.email}
+        const user = await prisma.user.findUnique({
+                where:{ email: credentials.email}
             });
         
         if(!user || !user?.hashedPassword){
@@ -49,8 +48,8 @@ export const authOptions: AuthOptions = {
 
         return user;
 
-    },
-    }),
+    }
+    })
   ],
   pages:{
     signIn:'/'
@@ -62,4 +61,4 @@ export const authOptions: AuthOptions = {
   secret:process.env.NEXTAUTH_SECRET,
 };
 
-export default  NextAuth(authOptions);
+export default NextAuth(authOptions);

@@ -41,7 +41,7 @@ scope String?
 id_token String? @db.String
 session_state String?
 
-user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+user User @relation( fields:[userId], references:[id], onDelete: Cascade)
 
 @@unique([provider,providerAccountId])
 }

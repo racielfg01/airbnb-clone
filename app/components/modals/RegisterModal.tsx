@@ -40,13 +40,14 @@ const RegisterModal = () => {
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true);
+        console.log(data);
      
 
         axios.post('/api/register', data)
             .then(() => { 
                 toast.success('Registered !');
-                registerModal.onClose(); 
                 loginModal.onOpen();
+                registerModal.onClose(); 
             })
             .catch(error => { toast.error('Algo ha salido mal') })
             .finally(() => {
@@ -55,11 +56,7 @@ const RegisterModal = () => {
             
     }
 
-    const onToggle = useCallback(() => {
-        registerModal.onClose();
-        loginModal.onOpen();
-      }, [registerModal, loginModal])
-
+ 
 
     const bodyContent = (
         <div className='flex flex-col gap-4'>
@@ -113,30 +110,21 @@ const RegisterModal = () => {
                 icon={AiFillGithub}
                 onClick={() => signIn('github')}
             />
-             <div className="
-      text-neutral-500 text-center mt-4 font-light">
-        <p>First time using Airbnb?
-          <span 
-            onClick={onToggle} 
-            className="
-              text-neutral-800
-              cursor-pointer 
-              hover:underline
-            "
-            > Create an account</span>
-        </p>
-      </div>
-            {/* <div className='text-neutral-500 text-center mt-4 font-light'>
+       
+       <div className='text-neutral-500 text-center mt-4 font-light'>
                 <div className='justify-center flex flex-row items-center gap-2'>
-                    <p>
-                        Already have an account?{" "}
-                        <span className='text-neutral-800 cursor-pointer hover:underline'>
-                            Log In
-                        </span>
-                    </p>
-                   
+                    <div>
+                        Already have an account?
+                    </div>
+                    <div className='text-neutral-800 cursor-pointer hover:underline'
+                        onClick={()=>{registerModal.onClose(); loginModal.onOpen()}}
+                    >
+                     Login
+                    </div>
+
                 </div>
-            </div> */}
+            </div>
+
 
         </div>
 

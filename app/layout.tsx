@@ -1,3 +1,4 @@
+//app/layout.tsx
 import { Nunito } from "next/font/google";
 
 import './globals.css'
@@ -9,6 +10,7 @@ import LoginModal from "./components/modals/LoginModal";
 import ToasterProvider from "./providers/ToasterProvider";
 import getCurrentUser from "./actions/getCurrentUser";
 import RentModal from "./components/modals/RentModal";
+import SearchModal from "./components/modals/SearchModal";
 
 export const metadata = {
   title: 'Aribnb Next App',
@@ -31,6 +33,7 @@ const currentUser =await getCurrentUser();
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider />
+          <SearchModal />
           <LoginModal />
           <RentModal />
           <RegisterModal />
