@@ -61,17 +61,17 @@ const onRent = useCallback(()=>{
           {currentUser?(
           <>
           <MenuItem onClick={()=>{router.push("/trips");toggleOpen()}} label="My trips" />
-          <MenuItem onClick={()=>router.push("/favorites")} label="My favorites" />
-          <MenuItem onClick={()=>router.push("/reservations")} label="My reservations" />
-          <MenuItem onClick={()=>router.push("/properties")} label="My properties" />
-          <MenuItem onClick={rentModal.onOpen} label="Airbnb my home" />
+          <MenuItem onClick={()=>{router.push("/favorites");toggleOpen()}} label="My favorites" />
+          <MenuItem onClick={()=>{router.push("/reservations");toggleOpen()}} label="My reservations" />
+          <MenuItem onClick={()=>{router.push("/properties");toggleOpen()}} label="My properties" />
+          <MenuItem onClick={()=>{toggleOpen();rentModal.onOpen;}} label="Airbnb my home" />
           <hr/>
-          <MenuItem onClick={()=>signOut()} label="Logout" />
+          <MenuItem onClick={()=>{toggleOpen();signOut()}} label="Logout" />
           </>
           ):(
             <>
-            <MenuItem onClick={loginModal.onOpen} label="Login" />
-            <MenuItem onClick={registerModal.onOpen} label="Sign Up" />
+            <MenuItem onClick={()=>{toggleOpen();loginModal.onOpen}} label="Login" />
+            <MenuItem onClick={()=>{toggleOpen();registerModal.onOpen}} label="Sign Up" />
             </>
           )}
         </div>
