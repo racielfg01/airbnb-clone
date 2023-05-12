@@ -64,14 +64,14 @@ const onRent = useCallback(()=>{
           <MenuItem onClick={()=>{router.push("/favorites");toggleOpen()}} label="My favorites" />
           <MenuItem onClick={()=>{router.push("/reservations");toggleOpen()}} label="My reservations" />
           <MenuItem onClick={()=>{router.push("/properties");toggleOpen()}} label="My properties" />
-          <MenuItem onClick={()=>{toggleOpen();rentModal.onOpen;}} label="Airbnb my home" />
+          <MenuItem onClick={()=>{rentModal.onOpen;toggleOpen()}} label="Airbnb my home" />
           <hr/>
-          <MenuItem onClick={()=>{toggleOpen();signOut()}} label="Logout" />
+          <MenuItem onClick={()=>{signOut();toggleOpen()}} label="Logout" />
           </>
           ):(
             <>
-            <MenuItem onClick={()=>{toggleOpen();loginModal.onOpen}} label="Login" />
-            <MenuItem onClick={()=>{toggleOpen();registerModal.onOpen}} label="Sign Up" />
+            <MenuItem onClick={()=>{loginModal.onOpen;toggleOpen()}} label="Login" />
+            <MenuItem onClick={()=>{registerModal.onOpen;toggleOpen()}} label="Sign Up" />
             </>
           )}
         </div>
