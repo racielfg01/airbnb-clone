@@ -71,8 +71,8 @@ const onRent = useCallback(()=>{
           </>
           ):(
             <>
-            <MenuItem onClick={loginModal.onOpen} label="Login" />
-            <MenuItem onClick={registerModal.onOpen} label="Sign Up" />
+            <MenuItem onClick={()=>{loginModal.onOpen();toggleOpen()}} label="Login" />
+            <MenuItem onClick={()=>{registerModal.onOpen();toggleOpen()}} label="Sign Up" />
             </>
           )}
         </div>
