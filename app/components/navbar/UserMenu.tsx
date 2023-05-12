@@ -32,10 +32,10 @@ const onRent = useCallback(()=>{
  if(!currentUser){
   return loginModal.onOpen();
  }
- toggleOpen();
- rentModal.onOpen();
 
-  },[currentUser, loginModal, rentModal, toggleOpen])
+ rentModal.onOpen();
+ 
+  },[currentUser,loginModal,rentModal])
 
   return (
     <div className="relative">
@@ -65,7 +65,7 @@ const onRent = useCallback(()=>{
           <MenuItem onClick={()=>{router.push("/favorites");toggleOpen()}} label="My favorites" />
           <MenuItem onClick={()=>{router.push("/reservations");toggleOpen()}} label="My reservations" />
           <MenuItem onClick={()=>{router.push("/properties");toggleOpen()}} label="My properties" />
-          <MenuItem onClick={rentModal.onOpen} label="Airbnb my home" />
+          <MenuItem onClick={()=>{rentModal.onOpen();toggleOpen()}} label="Airbnb my home" />
           <hr/>
           <MenuItem onClick={signOut} label="Logout" />
           </>
