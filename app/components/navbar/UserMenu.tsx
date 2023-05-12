@@ -32,9 +32,10 @@ const onRent = useCallback(()=>{
  if(!currentUser){
   return loginModal.onOpen();
  }
-
+ toggleOpen();
  rentModal.onOpen();
-  },[currentUser,loginModal,rentModal])
+
+  },[currentUser, loginModal, rentModal, toggleOpen])
 
   return (
     <div className="relative">
