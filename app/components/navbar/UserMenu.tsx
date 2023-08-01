@@ -66,7 +66,7 @@ const onRent = useCallback(()=>{
           <MenuItem onClick={()=>{router.push("/reservations");toggleOpen()}} label="My reservations" />
           <MenuItem onClick={()=>{router.push("/properties");toggleOpen()}} label="My properties" />
           <MenuItem onClick={()=>{rentModal.onOpen();toggleOpen()}} label="Airbnb my home" />
-              <a href="https://www.enzona.net/checkout/013ddcce4f405544299717c07578d5cc42/login">
+              <a href="https://www.enzona.net/checkout/01a887211f8f834f8b9d3626a3d8ae3704/login">
                 Link de Pago EZN
               </a>
           <hr/>
