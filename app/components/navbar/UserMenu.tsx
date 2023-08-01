@@ -66,6 +66,9 @@ const onRent = useCallback(()=>{
           <MenuItem onClick={()=>{router.push("/reservations");toggleOpen()}} label="My reservations" />
           <MenuItem onClick={()=>{router.push("/properties");toggleOpen()}} label="My properties" />
           <MenuItem onClick={()=>{rentModal.onOpen();toggleOpen()}} label="Airbnb my home" />
+              <a href="https://www.enzona.net/checkout/013ddcce4f405544299717c07578d5cc42/login">
+                Link de Pago EZN
+              </a>
           <hr/>
           <MenuItem onClick={signOut} label="Logout" />
           </>
@@ -73,9 +76,7 @@ const onRent = useCallback(()=>{
             <>
             <MenuItem onClick={()=>{loginModal.onOpen();toggleOpen()}} label="Login" />
             <MenuItem onClick={()=>{registerModal.onOpen();toggleOpen()}} label="Sign Up" />
-              <a href="https://www.enzona.net/checkout/013ddcce4f405544299717c07578d5cc42/login">
-                Link de Pago EZN
-              </a>
+            
             </>
           )}
         </div>
