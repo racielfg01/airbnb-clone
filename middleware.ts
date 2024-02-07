@@ -6,5 +6,8 @@ export const config ={
         "/reservations",
         "/properties",
         "/favorites",
+        "/enzona",
+        "/enzona/cancel",
+
     ]
 }

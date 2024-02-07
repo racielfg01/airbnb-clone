@@ -1,16 +1,18 @@
-import { useSearchParams } from "next/navigation"
 
+type Props = {
+  params: {};
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-const ReservationPage = async() => {
-   const params = useSearchParams()
-
+const Page = async(props:Props) => {
+  const searchParams = props.searchParams;
 
   return (
-    <>
+    <div>
    <p>HOla su transacion ha sido correcta!</p>
-   <p>{params?.toString()}</p>
-    </>
+   <p>{searchParams?.toString()}</p>
+    </div>
   )
 }
 
-export default ReservationPage
+export default Page
