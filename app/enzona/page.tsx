@@ -10,7 +10,7 @@ const Page = async(props:Props) => {
   return (
     <div>
    <p>HOla su transacion ha sido correcta!</p>
-   <p>{searchParams?.toString()}</p>
+   <p>{JSON.stringify(searchParams)}</p>
     </div>
   )
 }

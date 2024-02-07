@@ -10,7 +10,7 @@ const Page = async(props:Props) => {
   return (
     <>
    <p>HOla su transacion ha sido cancelada!</p>
-   <p>{searchParams?.toString()}</p>
+   <p>{JSON.stringify(searchParams)}</p>
     </>
   )
 }
