@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import fs from "fs"
 
 
-export async function GET(request: Request) {
+export async function POST(request: Request) {
    // Import the necessary libraries.
 
 // Create a new file and write data to it.
